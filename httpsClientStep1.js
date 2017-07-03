@@ -13,11 +13,9 @@ function getAndPrintHTMLChunks(){
     const contentType = res.headers['content-type']
 
 
-    let rawData = '';
     res.setEncoding('utf8');
     res.on('data', (chunk) =>{
-      rawData += chunk + '\n';
-      console.log(chunk);
+      console.log(chunk + '\n');
     });
 
     res.on('end', (chunk) =>{
